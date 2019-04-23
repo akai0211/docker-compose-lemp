@@ -17,9 +17,9 @@ services:
         networks:
             - LEMP
 
-    mariaDB:
-        image: mariadb:latest
-        container_name: LEMP_mariaDB
+    mySQL:
+        image: mysql:5.7
+        container_name: LEMP_MySQL
         volumes:
             - ./database:/var/lib/mysql:rw
         ports:
@@ -32,7 +32,7 @@ services:
             - LEMP    
 
     php:
-        image: php:7-fpm-alpine
+        image: php:7.2.16-fpm-alpine
         container_name: LEMP_php
         volumes:
             - ./code:/code
